@@ -6,7 +6,7 @@ function saveBannedCountries(bannedCountries) {
 
 function getBannedCountries() {
   const data = localStorage.getItem("bannedCountries");
-  // console.log(typeof data);
+
   if (data) {
     return data.split(",");
   }
@@ -43,7 +43,7 @@ function BannedCountries() {
 
   const deleteCountry = () => {
     const del = ban.filter((x) => x !== country);
-    if (country === "" ) {
+    if (country === "") {
       alert("Invalid Entry");
     } else {
       setBanned([...del]);
