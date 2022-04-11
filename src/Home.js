@@ -8,15 +8,32 @@ function Home() {
   return (
     <>
       {x === -1 ? (
-        <div>
-          <div className="d-grid gap-2">
-            <Button variant="secondary" size="lg" onClick={() => setX(1)}>
-              Edit Countries Banned
-            </Button>
-            <Button variant="primary" size="lg" onClick={() => setX(0)}>
-              Validate Credit Card
-            </Button>
-          </div>
+        <div style={{ paddingLeft: "35%" }}>
+          <h1>SELECT OPTION</h1>
+
+          <button
+            onClick={() => setX(1)}
+            style={{
+              backgroundColor: "#556B2F",
+              color: "white",
+              height: "35px",
+              margin: "30px",
+            }}
+          >
+            Configure Banned Countries
+          </button>
+          <br></br>
+          <button
+            onClick={() => setX(0)}
+            style={{
+              backgroundColor: "blue",
+              color: "white",
+              height: "35px",
+              margin: "60px",
+            }}
+          >
+            Validate Credit Cards
+          </button>
         </div>
       ) : (
         <div>

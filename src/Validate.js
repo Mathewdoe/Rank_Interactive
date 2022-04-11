@@ -53,27 +53,12 @@ function Validate(props) {
     setCardNumber(e.target.value);
   };
 
-  // const inPutCountry = e => {
-
-  // const inPutCountry = (e) => {
-  //   const re = /^[A-Za-z]+$/;
-  //   if (value === "" || re.test(value)) {
-  //     setTxt(value);
-  //     setCountry(e.target.value);
-  //   }
-    
-  // };
-
-  const inPutCountry = e => {
-    // const { value } = e.target;
+  const inPutCountry = (e) => {
     const re = /^[A-Za-z]+$/;
     if (e.target.value === "" || re.test(e.target.value)) {
       setCountry(e.target.value);
-     
     }
-  }
-
-
+  };
 
   const transferValue = () => {
     const val = {
@@ -89,7 +74,7 @@ function Validate(props) {
     function myFn(y) {
       return y === cardNumber;
     }
-    
+
     if (!checkIfBanned) {
       if (!checkDublicate) {
         props.func(val);
@@ -98,15 +83,14 @@ function Validate(props) {
         alert("Dublicate card");
         clearState();
       }
-    
-    } else {
+    } else if (checkIfBanned) {
       clearState();
       return alert("Country Banned");
     }
     setCountries([...countries, country]);
     setCardNumbers([...cardNumbers, cardNumber]);
-    setCardDetails(val.cardNumber)
-    console.log(typeof(cardDetails[0].CardNumbers));
+    setCardDetails(val.cardNumber);
+    console.log(typeof cardDetails[0].CardNumbers);
   };
 
   const clearState = () => {
